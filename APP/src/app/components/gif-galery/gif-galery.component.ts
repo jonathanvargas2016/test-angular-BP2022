@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { IGif } from 'src/app/interfaces/igif';
-import { GifsService } from 'src/app/services/gifs.service';
+import { IGif } from '../../../../src/app/interfaces/igif';
+import { GifsService } from '../../../../src/app/services/gifs.service';
 
 @Component({
   selector: 'app-gif-galery',

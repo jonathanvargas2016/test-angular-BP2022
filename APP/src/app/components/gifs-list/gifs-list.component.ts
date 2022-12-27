@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { IGif } from 'src/app/interfaces/igif';
+import { IGif } from '../../../../src/app/interfaces/igif';
 
 @Component({
   selector: 'app-gifs-list',
@@ -18,7 +18,6 @@ export class GifsListComponent implements OnInit {
   }
 
   deleteGif(gif: IGif){
-    console.log(gif)
     this.onDeleteGif.emit(gif)
   }
 
