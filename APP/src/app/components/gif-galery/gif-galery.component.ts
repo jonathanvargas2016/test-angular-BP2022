@@ -23,7 +23,6 @@ export class GifGaleryComponent implements OnInit {
 
   ngOnInit(): void {
     this.gifService.getGifs().subscribe((data: any) => {
-      console.log(data);
       this.gifsList = [...this.gifsList, ...data];
     });
   }
@@ -31,7 +30,6 @@ export class GifGaleryComponent implements OnInit {
   save() {
     if (this.myForm.invalid) {
       this.myForm.markAllAsTouched();
-      console.log('error en el formulario');
       return;
     }
     const gifAux: IGif = {
@@ -53,7 +51,6 @@ export class GifGaleryComponent implements OnInit {
   deleteGif(gif: IGif) {
     this.gifService.deleteGif(gif).subscribe(
       (data: any) => {
-        console.log(data);
         this.gifsList = this.gifsList.filter((gif) => gif.id !== data.id);
       },
       (error) => {
