@@ -1,0 +1,29 @@
+<div class="row content-todo">
+  <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+    <h3>Gif Gallery</h3>
+
+    <form (ngSubmit)="save()" autocomplete="off" [formGroup]="myForm">
+      <div class="row">
+        <div class="col col-xl-9 col-lg-9 col-md-9 col-sm-6 col-6">
+          <div class="mb-3">
+            <input type="url" 
+            class="form-control"
+            formControlName="gif" 
+            placeholder="Gift URL"
+             />
+          </div>
+        </div>
+      </div>
+      <div
+        class="col col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6"
+        style="text-align: end"
+      >
+        <button type="submit" class="btn btn-primary">Agregar</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+    <app-gifs-list [gifs]="gifsList"></app-gifs-list>
+  </div>
+</div>

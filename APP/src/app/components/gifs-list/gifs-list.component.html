@@ -1,0 +1,8 @@
+
+<div class="container mt-4">
+    <ng-container *ngIf="gifs.length > 0; else noGifs"></ng-container>
+</div>
+
+<ng-template #noGifs>
+    <h1>No posee Gifs</h1>
+</ng-template>
