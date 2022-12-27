@@ -39,16 +39,33 @@ export class GifGaleryComponent implements OnInit {
       author_id: 2004,
     };
 
-    console.log(gifAux);
-
     this.gifService.createGif(gifAux).subscribe(
-      (data) => {
+      (data: any) => {
+        this.gifsList = [...this.gifsList, data];
         this.myForm.reset();
-        console.log(data);
       },
       (error) => {
-        console.log(error.message);
+        alert('No se pudo agregar el GIF');
       }
+    );
+  }
+
+  deleteGif(gif: IGif) {
+    this.gifService.deleteGif(gif).subscribe(
+      (data: any) => {
+        console.log(data);
+        this.gifsList = this.gifsList.filter((gif) => gif.id !== data.id);
+      },
+      (error) => {
+        alert('No se pudo eliminar el GIF');
+      }
+    );
+  }
+
+  campoEsValido(campo: string) {
+    return (
+      this.myForm.controls[campo].errors &&
+      this.myForm.controls[campo].touched 
     );
   }
 }

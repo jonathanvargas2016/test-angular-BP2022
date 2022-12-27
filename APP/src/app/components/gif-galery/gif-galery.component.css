@@ -1,4 +1,14 @@
-.content-todo{
-    width: 70%;
-    margin: auto;
+.content-gifs {
+  width: 70%;
+  margin: auto;
+  border: 1px solid;
+  margin-top: 40px !important;
+  padding: 10px;
+  box-shadow: 5px 10px #888888;
+}
+
+.btn-add {
+  padding: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }

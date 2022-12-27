@@ -1,8 +1,17 @@
-
 <div class="container mt-4">
-    <ng-container *ngIf="gifs.length > 0; else noGifs"></ng-container>
+  <ng-container *ngIf="gifs.length > 0; else noGifs">
+    <div class="row">
+      <div
+        class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 content-card"
+        *ngFor="let gif of gifs"
+      >
+        <img [src]="gif.url" class="rounded mx-auto d-block gif-item" alt="image gif" />
+        <button (click)="deleteGif(gif)" class="btn btn-primary mt-4 mb-4">Eliminar</button>
+      </div>
+    </div>
+  </ng-container>
 </div>
 
 <ng-template #noGifs>
-    <h1>No posee Gifs</h1>
+  <h1 class="text-center">No posee Gifs</h1>
 </ng-template>
